@@ -1,0 +1,42 @@
+
+<h3>Saved product List</h3>
+
+      
+<div class="row">
+
+    <div class="col-lg-4 col-md-6 mb-4" *ngFor="let product of filteredproduct">
+      <div class="card h-100">
+        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+        <div class="card-body">
+          <h4 class="card-title">
+            <a href="#">{{product.Name}}</a>
+          </h4>
+          <h5>{{product.price}}</h5>
+          <p style="color:chocolate;">{{product.Location}}</p>
+
+          <p>Quantities : {{product.qty}}</p>
+
+         
+
+
+          <!-- <div *ngIf="isqty; else loggedOut">
+            <p>{{product.qty}}</p>
+          </div> -->
+          
+          <!-- <ng-template #loggedOut>
+            <input type="text" value="SoldOut">
+          </ng-template> -->
+
+    <br> <br>          
+          <button class="btn btn-success" (click)="AllProduct()">See All Product</button>
+
+        </div>
+        <!-- <div class="card-footer">
+          <button (click)="addCart(product.id)" class="btn btn-success">Add to Cart</button>
+        </div> -->
+      </div>
+    </div>
+
+   
+
+    </div>

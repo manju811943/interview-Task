@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "interview-Task"
+    }
+  },
+  "defaultProject": "interview-Task",
+  "cli": {
+    "analytics": "1fd9d5ff-a275-4d2b-ae10-0b167a703e3b"
+  }
 }
