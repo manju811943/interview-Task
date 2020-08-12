@@ -40,24 +40,32 @@
     <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="UserName">UserName</label>
-        <input type="text" class="form-control" formControlName="username"  placeholder="UserName">
+        <input type="text" class="form-control" formControlName="username" required  placeholder="UserName">
+        <span style="color: red;" *ngIf="profileForm.get('username').touched && profileForm.get('username').hasError('required') ">
+            Please Enter UserName </span>
       </div>
       <div class="form-group">
         <label for="Password">Password</label>
-        <input type="text" class="form-control" formControlName="password" placeholder="Password">
+        <input type="text" class="form-control" formControlName="password" required placeholder="Password">
+        <span style="color: red;" *ngIf="profileForm.get('password').touched && profileForm.get('username').hasError('required') ">
+            Please Enter Password </span>
       </div>
 
       <div class="form-group">
         <label for="Password">Email-Id</label>
-        <input type="text" class="form-control" formControlName="Email-Id" placeholder="Email-Id">
+        <input type="text" class="form-control" formControlName="EmailId" required placeholder="Email-Id">
+        <span style="color: red;" *ngIf="profileForm.get('EmailId').touched && profileForm.get('username').hasError('required') ">
+            Please Enter EmailId </span>
       </div>
 
       <div class="form-group">
         <label for="Password">Mobile-No</label>
-        <input type="text" class="form-control" formControlName="mobile-No" placeholder="Mobile-No">
+        <input type="text" class="form-control" formControlName="mobileNo" required placeholder="Mobile-No">
+        <span style="color: red;" *ngIf="profileForm.get('mobileNo').touched && profileForm.get('username').hasError('required') ">
+            Please Enter MobileNo </span>
       </div>
        
-      <button type="submit" class="btn btn-success">Submit</button>
+      <button type="submit" [disabled]="!profileForm.valid" class="btn btn-success">Submit</button>
     </form>
   </div>
 

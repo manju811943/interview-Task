@@ -13,6 +13,9 @@ export class SignupComponent implements OnInit {
   profileForm = new FormGroup({
     username: new FormControl(''),
     password: new FormControl(''),
+    EmailId : new FormControl(''),
+    mobileNo : new FormControl('')
+
   });
 
   constructor(private router : Router) { }

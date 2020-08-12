@@ -37,14 +37,21 @@
 
 <div class="form" class="col-4 offset-4">
   <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
     <div class="form-group">
       <label for="UserName">UserName</label>
       <input type="text" class="form-control" required formControlName="username"  placeholder="UserName">
+        <span style="color: red;" *ngIf="profileForm.get('username').touched && profileForm.get('username').hasError('required') ">
+          Please Enter UserName </span>
     </div>
+
     <div class="form-group">
       <label for="Password">Password</label>
       <input type="text" class="form-control" required formControlName="password" placeholder="Password">
+      <span style="color: red;" *ngIf="profileForm.get('password').touched && profileForm.get('password').hasError('required') ">
+        Please Enter Password </span>
     </div>
+
 
     <button type="submit" class="btn btn-success" [disabled]="!profileForm.valid">Submit</button> &nbsp;
 
